@@ -1,6 +1,6 @@
-import { Divider } from '@mui/material';
 import React from 'react'
 import { useState, useEffect } from 'react';
+import PopUpDetail from '../components/PopUpDetail';
 
 export default function Shop() {
 
@@ -32,7 +32,8 @@ export default function Shop() {
             </span>
             <span className='product-details'>
               <h2>{product.price}</h2>
-              <h5>{product.description}</h5>
+              <h5>{product.category}</h5>
+              <PopUpDetail product={product.description}/>
             </span>
           </div>
         </div>

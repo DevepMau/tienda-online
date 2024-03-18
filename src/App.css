@@ -1,10 +1,22 @@
 .App {
   text-align: center;
+  font-family: "Piazzolla", serif;
 }
 
 img {
   width: 300px;
   height: 300px;
+}
+
+.shop-container {
+  background-image: url('/src/img/mujer-con-bolsas.jpg'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+  background-position: center; /* Centra la imagen de fondo */
+  background-attachment: fixed; /* Hace que la imagen de fondo sea estática */
+  padding: 20px; /* Agrega algo de espacio alrededor de los elementos */
+  display: flex;
+  flex-wrap: wrap; /* Esto permite que los elementos se envuelvan cuando no hay suficiente espacio */
+  justify-content: center; /* Esto centra los elementos */
 }
 
 .Banner {
@@ -17,12 +29,13 @@ img {
 }
 
 .product-container-column {
+  background-color: white;
   display: flex;
   flex-direction: column;
   border: 1px solid #ccc;
   border-radius: 25px;
-  max-width: 60%; /* Por ejemplo, puedes ajustar el valor según tus necesidades */
-  margin: 0 auto; /* Centra el contenedor en la página */
+  width: 480px;
+  margin: 0 10px 20px 10px; /* Ajuste los márgenes para espaciar las columnas */
   h3 {
     text-align: center;
   }
@@ -40,14 +53,16 @@ img {
 .product-details {
   flex: 1;
   padding: 10px;
-  align-self: flex-end; 
+  align-self: center;
+  min-width: 0;
+  word-wrap: break-word; /* Permite que el texto se rompa en palabras si no cabe en una línea */
   h5 {
-    text-align: justify;
+    text-align: right;
     margin-right: 10%;
+    color: darkgray;
   }
   h2 {
     text-align: right;
     margin-right: 10%;
   }
 }
-
