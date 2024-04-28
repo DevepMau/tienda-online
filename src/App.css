@@ -3,9 +3,13 @@
   font-family: "Piazzolla", serif;
 }
 
-img {
-  width: 300px;
-  height: 300px;
+.Banner {
+  text-align: center;
+  background-color: black;
+  color: white;
+  height: 15vh;
+  width: 100%;
+  margin: 0;
 }
 
 .shop-container {
@@ -19,50 +23,36 @@ img {
   justify-content: center; /* Esto centra los elementos */
 }
 
-.Banner {
-  text-align: center;
-  background-color: black;
-  color: white;
-  height: 15vh;
-  width: 100%;
-  margin: 0;
-}
-
-.product-container-column {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ccc;
-  border-radius: 25px;
-  width: 480px;
-  margin: 0 10px 20px 10px; /* Ajuste los márgenes para espaciar las columnas */
+.product-container{
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  margin: 10px;
+  max-width: 300px;
   h3 {
-    text-align: center;
+    display: -webkit-box; /* Establece la visualización como un contenedor de caja flexible */
+    -webkit-line-clamp: 2; /* Limita el número de líneas a mostrar */
+    -webkit-box-orient: vertical; /* Establece la orientación de las líneas */
+    overflow: hidden; /* Oculta el texto que se desborda del contenedor */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se desborda */
+    height: 3em;
+    white-space: normal; /* Restaura el comportamiento predeterminado del espacio en blanco */
   }
 }
 
-.product-container-row {
-  display: flex;
+.product-row-title{
+  align-items: center; /* Centra verticalmente */
 }
 
-.product-image {
-  flex: 1;
-  padding: 10px;
+.product-row-image{
+  img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+  }
 }
 
-.product-details {
-  flex: 1;
-  padding: 10px;
-  align-self: center;
-  min-width: 0;
-  word-wrap: break-word; /* Permite que el texto se rompa en palabras si no cabe en una línea */
-  h5 {
-    text-align: right;
-    margin-right: 10%;
-    color: darkgray;
-  }
-  h2 {
-    text-align: right;
-    margin-right: 10%;
-  }
+.product-row-button{
+  display: flex; /* Utiliza flexbox para alinear los elementos en línea */
+  justify-content: space-between; /* Distribuye el espacio disponible entre los elementos */
+  flex: 1; /* Hace que los botones ocupen el mismo ancho dentro del contenedor */
 }

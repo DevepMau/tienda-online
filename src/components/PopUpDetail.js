@@ -15,12 +15,15 @@ export default function PopUpDetail( {product} ) {
     };
 
     const CustomButton = styled(Button)({
-        backgroundColor: 'orange',
-        color: 'white',
-        '&:hover': {
-          backgroundColor: 'yellow',
-        },
-      });
+      margin: 5,
+      marginLeft: 15,
+      marginRight: 15,
+      backgroundColor: 'orange',
+      color: 'white',
+      '&:hover': {
+        backgroundColor: 'yellow',
+      },
+    });
 
   return (
     <div>
