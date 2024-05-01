@@ -12,47 +12,17 @@
   margin: 0;
 }
 
-.shop-container {
-  background-image: url('/src/img/mujer-con-bolsas.jpg'); /* Ruta de la imagen de fondo */
-  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
-  background-position: center; /* Centra la imagen de fondo */
-  background-attachment: fixed; /* Hace que la imagen de fondo sea estática */
-  padding: 20px; /* Agrega algo de espacio alrededor de los elementos */
-  display: flex;
-  flex-wrap: wrap; /* Esto permite que los elementos se envuelvan cuando no hay suficiente espacio */
-  justify-content: center; /* Esto centra los elementos */
+img{
+  height: 350px;
+  width: 350px;
 }
 
-.product-container{
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 15px;
-  margin: 10px;
-  max-width: 300px;
-  h3 {
-    display: -webkit-box; /* Establece la visualización como un contenedor de caja flexible */
-    -webkit-line-clamp: 2; /* Limita el número de líneas a mostrar */
-    -webkit-box-orient: vertical; /* Establece la orientación de las líneas */
-    overflow: hidden; /* Oculta el texto que se desborda del contenedor */
-    text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se desborda */
-    height: 3em;
-    white-space: normal; /* Restaura el comportamiento predeterminado del espacio en blanco */
-  }
-}
-
-.product-row-title{
-  align-items: center; /* Centra verticalmente */
-}
-
-.product-row-image{
-  img {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-  }
-}
-
-.product-row-button{
-  display: flex; /* Utiliza flexbox para alinear los elementos en línea */
-  justify-content: space-between; /* Distribuye el espacio disponible entre los elementos */
-  flex: 1; /* Hace que los botones ocupen el mismo ancho dentro del contenedor */
+.product-title {
+  max-height: 3em; /* Ajusta según sea necesario para dos líneas de texto */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* Permite que el texto envuelva cuando exceda el límite de altura */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limita a dos líneas de texto */
+  -webkit-box-orient: vertical;
 }

@@ -2,20 +2,10 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import PopUpDetail from '../components/PopUpDetail';
-import { Button } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Box, Button, Fab, Stack } from '@mui/material';
 
 export default function Shop() {
-
-  const NewButton = styled(Button)({
-    margin: 5,
-    marginLeft: 15,
-    marginRight: 15,
-    backgroundColor: 'orange',
-    color: 'white',
-    '&:hover': {
-      backgroundColor: 'yellow',
-    },
-  });
 
   const [data, setData] = useState(null)
 
@@ -30,26 +20,50 @@ export default function Shop() {
       .catch(error => console.error('Error fetching data:', error));
   };
 
+  const CustomButton = styled(Button)({
+    backgroundColor: 'orange',
+    color: 'white',
+    '&:hover': {
+      backgroundColor: 'yellow',
+    },
+  });
 
   return (
-    <div className='shop-container'>
+    <Box
+      display={'flex'}
+      flexWrap={'wrap'}
+    >
       {/* Verifica si data es null antes de mapear para evitar errores */}
       {data && data.map((product, index) => (
-        <div className='product-container' key={index}>
-          <div className='product-row-title'>
-            <h3>{product.title}</h3>
-          </div>
-          <div className='product-row-image'>
-            <span>
-              <img src={product.image} alt={product.title} />
-            </span>
-          </div>
-          <div className='product-row-button'>
-            <NewButton>Comprar</NewButton>
-            <PopUpDetail product={product.description}/>
-          </div>
-        </div>
+        <Box 
+          key={index}
+          height={400}
+          width={350}
+          margin={2}
+          marginTop={8}
+          marginBottom={8}
+          position='relative'
+        >
+          <Box>
+            <Stack spacing={2} direction='row' style={{position: 'absolute'}}>
+              <Fab 
+                color='primary' 
+                aria-label='add to cart'
+              >
+                <ShoppingCartIcon />
+              </Fab>
+              <PopUpDetail product={product.description}/>
+            </Stack>
+            <img src={product.image} alt={product.title} />
+          </Box> 
+          <Box
+            height={50}
+            alignContent={'center'}
+          >
+            <h3 className='product-title'>{product.title}</h3>
+          </Box>
+        </Box>
       ))}
-    </div>
+    </Box>
   )
 }

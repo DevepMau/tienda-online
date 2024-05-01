@@ -1,6 +1,7 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Fab } from '@mui/material';
 import React from 'react'
 import { styled } from '@mui/material/styles';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 
 export default function PopUpDetail( {product} ) {
 
@@ -15,9 +16,6 @@ export default function PopUpDetail( {product} ) {
     };
 
     const CustomButton = styled(Button)({
-      margin: 5,
-      marginLeft: 15,
-      marginRight: 15,
       backgroundColor: 'orange',
       color: 'white',
       '&:hover': {
@@ -27,9 +25,13 @@ export default function PopUpDetail( {product} ) {
 
   return (
     <div>
-        <CustomButton variant="outlined" onClick={handleClickOpen}>
-        Description
-        </CustomButton>
+        <Fab
+          color='secondary'
+          aria-label='sight'
+          onClick={handleClickOpen}
+        >
+          <RemoveRedEyeIcon />
+        </Fab>
         <Dialog
             open={open}
             onClose={handleClose}
